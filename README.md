@@ -1,8 +1,11 @@
+<img width="1284" height="719" alt="Virtual_MoCap" src="https://github.com/user-attachments/assets/d6356f44-5115-4bf1-ae53-91a7102d703f" />
+
 # Virtual-MoCap
 MocapRecorder is an Unreal Engine 5 editor tool that records **skeletal animation** from actors in your level and then **bakes** those recordings into Animation Sequence assets (UAnimSequence) through an editor-side bake queue.
 Disclaimer: This tool used AI heavily during its creation, However AI is not being used in the tool itself.
 
 MocapRecorder Plugin — Description + Usage Guide
+
 =================================================
 
 What this plugin is
@@ -27,6 +30,8 @@ Modules
 ----------------------------------------------------------------------
 INSTALLATION (step-by-step)
 ----------------------------------------------------------------------
+
+https://youtu.be/135jrBKW95c
 
 ##For BP only projects there is an Option B below Option A with the step by step instructions for your use case##
 
@@ -148,6 +153,16 @@ Unreal will now:
 - Create a minimal C++ module
 - Open Visual Studio (or Rider)
 - Compile the project and plugin
+
+- STEP 3.5 - There are cases where this may fail. If it does fail you may need to create a C++ class within unreal editor. 
+
+-To do that you simply remove the plugin from the plugins folder temporarily. 
+
+-Double click the uproject to open the editor then click on 
+
+-Tools -> NEW C++ Class -> class type NONE->name it DUMMY -> Create Class 
+
+-Close the Visual Studio Pop up and the editor then repeat steps 2 and 3.
 
 ----------------------------------------------------------------------
 STEP 4 — Build the Editor (First Time Only)
