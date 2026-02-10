@@ -1,0 +1,22 @@
+Quick start and installation Guide:
+
+Step one:
+
+	Windows: https://learn.microsoft.com/en-us/visualstudio/releases/2022/release-notes#17.8.0
+    MAC: https://developer.apple.com/documentation/xcode/installing-the-command-line-tools  
+    For linux users you will need to install Visual Studio Code. 
+	
+Step two: 
+	
+	Download the epic games launcher https://store.epicgames.com/en-US/download and install it. Then in the launcher click library and install the unreal engine editor.
+	
+Step three:
+
+	Create new games project select either BP or C++. 
+	
+	If BP only is used, open the editor and click tools on top left and then select NEW C++ CLass. Select none, and name it dummy. Unreal will generate a solution for the project. Then after visual studios opens close the editor and visual studios and copy the plugin .zip into the Plugins folder in the project root. The same directory where your new .sln and .uproject reside. If there is no Plugins folder create one. extract/unzip the .zip in the plugins folder thats it. Then go back into your project root and right click your .uproject and select generate new project files. after it generates double click that .sln that was generated. it will open visual studios, on the right side there will be a list that contains a file with your project directory folders name, right click it and select Build. (if you are using a preexisting game you may need to REBUILD). After it compiles close Visual Studios and double click the .uproject and open the editor.
+	
+	
+	
+	
+	Close the editor and migrate to the installation folder

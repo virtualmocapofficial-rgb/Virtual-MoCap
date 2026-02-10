@@ -1,0 +1,140 @@
+FBX EXPORT — STEP-BY-STEP (FULL COPY-PASTE)
+===========================================
+
+This section explains exactly how to export FBX files using the MocapRecorder plugin,
+from a completed recording through a usable FBX on disk.
+
+This assumes:
+- You already recorded a session using REC / STOP
+- Animation assets (UAnimSequence) were successfully baked
+- You want to export those animations to FBX for Blender, Maya, or other DCC tools
+
+----------------------------------------------------------------------
+OVERVIEW OF THE EXPORT PIPELINE
+----------------------------------------------------------------------
+
+The MocapRecorder plugin works in three distinct stages:
+
+1) Record motion → stored internally as sampled frames
+2) Bake → converts recorded frames into UAnimSequence assets
+3) Export → converts UAnimSequence assets into FBX files
+
+FBX export is always performed from Animation Sequences, not directly from live recording.
+
+----------------------------------------------------------------------
+STEP-BY-STEP: EXPORTING FBX FILES
+----------------------------------------------------------------------
+
+STEP 1 — Verify the Bake Completed
+----------------------------------
+
+1) After pressing STOP, wait for the Bake Queue to finish.
+2) The status line should return to an idle state.
+3) Open the Content Drawer and navigate to your bake folder.
+4) Confirm that AnimSequence assets exist.
+
+If no AnimSequence assets exist:
+- FBX export will not work.
+- Fix baking issues first.
+
+----------------------------------------------------------------------
+STEP 2 — Locate the Animation Sequence(s)
+-----------------------------------------
+
+1) Open the Content Drawer.
+2) Navigate to the folder containing baked animations. Should be a folder called MocapCaptures
+3) Select one or more AnimSequence assets. Highly recommend exporting all at once.
+
+Notes:
+- Multi-capture produces one AnimSequence per actor.
+- Spawned instances may also produce AnimSequences.
+
+----------------------------------------------------------------------
+STEP 3 — Right-Click Export
+---------------------------
+
+1) Right-click the selected AnimSequence asset(s).
+2) Choose:
+   Asset Actions → Export…
+
+This uses Unreal Engine’s native FBX exporter.
+
+----------------------------------------------------------------------
+STEP 4 — Choose Export Location
+-------------------------------
+
+1) Choose a destination folder on disk.
+2) Click Save.
+
+For multiple selections:
+- One FBX will be generated per AnimSequence.
+
+----------------------------------------------------------------------
+STEP 5 — FBX Export Options (RECOMMENDED)
+----------------------------------------
+
+Animation
+- Export Animation: ON
+- Export Local Time: ON
+- Export Preview Mesh: OFF
+- Export Rigid Mesh: OFF
+
+Mesh
+- Export Skeletal Mesh: ON
+- Export Static Mesh: ON If available
+
+Transform
+- Convert Scene: ON
+- Force Front XAxis: OFF
+
+Axis Conversion
+- Forward Axis: -Y
+- Up Axis: Z
+
+Advanced
+- Export Morph Targets: OFF
+- Export Custom Attributes: OFF
+- Level of Detail: OFF
+
+----------------------------------------------------------------------
+STEP 6 — Complete the Export
+----------------------------
+
+1) Click Export.
+2) Wait for completion.
+3) Verify the FBX file exists and has non-zero size.
+
+----------------------------------------------------------------------
+BATCH EXPORT (OPTIONAL)
+----------------------------------------------------------------------
+
+1) Select multiple AnimSequences.
+2) Right-click → Asset Actions → Export…
+3) Choose a folder.
+4) Unreal exports one FBX per animation.
+
+----------------------------------------------------------------------
+BLENDER IMPORT REFERENCE
+----------------------------------------------------------------------
+
+When importing into Blender:
+
+Highly recommend using a multi importer, https://github.com/Tilapiatsu/blender-Universal_Multi_Importer
+
+- File → Import → FBX
+- Scale: 1.0
+- Apply Transform: ON
+- Automatic Bone Orientation: on
+- Use Pre/Post Rotations: ON
+
+----------------------------------------------------------------------
+IMPORTANT NOTES
+----------------------------------------------------------------------
+
+- MocapRecorder does not directly export FBX.
+- Unreal’s native exporter is used by design.
+
+----------------------------------------------------------------------
+END — FBX EXPORT INSTRUCTIONS
+----------------------------------------------------------------------
+

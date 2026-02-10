@@ -1,0 +1,20 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "Mocap Recorder",
+  "Description": "Mocap recording and export with an editor control window.",
+  "Category": "Animation",
+  "Modules": [
+    {
+      "Name": "MocapRecorder",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "MocapRecorderEditor",
+      "Type": "Editor",
+      "LoadingPhase": "Default"
+    }
+  ]
+}
